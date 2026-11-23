@@ -11,11 +11,11 @@ export default function PostList({
   onCreate,
   onSelect
 }) {
-  const[currentpage, setCurrentpage] = useState(1);
+  const[currentpage, setCurrentpage] = React.useState(1);
   const postsperpage = 6;
 
   // rest to page 1 when the search query changes
-  useEffect(() => {
+  React.useEffect(() => {
     setCurrentpage(1);
   }, [query]);
 
@@ -83,6 +83,7 @@ export default function PostList({
       </button>)}
     </div>
     }
+    {totalpages > 1 && (
     <div className="pagination">
       <button className="button button-outline" disabled={currentpage === 1} onClick={() => setCurrentpage(p => p - 1)}>
         Previous
@@ -92,5 +93,6 @@ export default function PostList({
         Next page
       </button>
   </div>
+  )}
   </main>;
 }
