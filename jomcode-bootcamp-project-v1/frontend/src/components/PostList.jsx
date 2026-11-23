@@ -88,7 +88,7 @@ export default function PostList({
       <button className="button button-outline" disabled={currentpage === 1} onClick={() => setCurrentpage(p => p - 1)}>
         Previous
       </button>
-      <span>Page {currentpage} of {totalpages}</span>
+      <span> Page {currentpage} of {totalpages} </span>
       <button className="button button-outline" disabled={currentpage === totalpages} onClick={() => setCurrentpage(p => p + 1)}>
         Next page
       </button>
