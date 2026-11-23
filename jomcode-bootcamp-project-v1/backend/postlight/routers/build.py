@@ -59,7 +59,7 @@ async def new_build(
             with conn.cursor(row_factory=dict_row) as cur:
                 cur.execute(
                     "insert into pc_build (author_id, build_name, cpu, cpu_cooler, motherboard, ram, " \
-                "graphic_card, storage_drive, power_supply, image_path) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) returning *",
+                "graphic_card, storage_drive, pc_case, power_supply, image_path) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) returning *",
                 (user_id, build_name.strip(), cpu.strip(), cpu_cooler.strip(), motherboard.strip(), ram.strip(), graphic_card.strip(), storage_drive.strip(), pc_case.strip(), power_supply.strip(), new_path),
                 )
                 row = cur.fetchone()
