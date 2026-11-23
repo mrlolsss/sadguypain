@@ -11,6 +11,19 @@ export default function PostList({
   onCreate,
   onSelect
 }) {
+  const[currentpage, setCurrentpage] = useState(1);
+  const postsperpage = 6;
+
+  // rest to page 1 when the search query changes
+  useEffect(() => {
+    setCurrentpage(1);
+  }, [query]);
+
+  const totalpages = Math.ceil(posts.length / postsperpage);
+  const startindex = (currentpage - 1) * postsperpage;
+  const currentposts = posts.slice(startindex, startindex + postsperpage);
+
+
   return <main className="wrap main-content">
     <div className="section-heading">
       <div>
@@ -43,7 +56,7 @@ export default function PostList({
       </p>
       <button className="button button-dark" onClick={onCreate}>Start building <IconArrowBadgeRight size={16} /></button>
     </div> : <div className="post-grid">
-      {posts.map((post, index) => <button className="post-card" key={post.id} onClick={() => onSelect(post)}>
+      {currentposts.map((post, index) => <button className="post-card" key={post.id} onClick={() => onSelect(post)}>
         <div className={`card-cover cover-${index % 4}`}>
           {post.image_url ? <img src={post.image_url} alt="" /> : <div className="cover-decoration">
             {/* <span>✦</span>
@@ -68,6 +81,16 @@ export default function PostList({
           </div>
         </div>
       </button>)}
-    </div>}
+    </div>
+    }
+    <div className="pagination">
+      <button className="button button-outline" disabled={currentpage === 1} onClick={() => setCurrentpage(p => p - 1)}>
+        Previous
+      </button>
+      <span>Page {currentpage} of {totalpages}</span>
+      <button className="button button-outline" disabled={currentPage === totalpages} onClick={() => setCurrentpage(p => p + 1)}>
+        Next page
+      </button>
+  </div>
   </main>;
 }
