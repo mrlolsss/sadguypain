@@ -1,6 +1,6 @@
 import React from 'react';
 // import { ArrowRight, BookOpen, LoaderCircle, Plus, Search } from 'lucide-react';
-import { IconArrowBadgeRight, IconArrowBadgeLeft, IconBrandTabnine, IconDevices2, IconCirclePlus, IconSearch } from '@tabler/icons-react';
+import { IconArrowBadgeRight, IconChevronLeftPipe, IconChevronRightPipe, IconBrandTabnine, IconDevices2, IconCirclePlus, IconSearch } from '@tabler/icons-react';
 
 export default function PostList({
   posts,
@@ -85,7 +85,7 @@ export default function PostList({
     }
     {totalpages > 1 && (
     <div className="pagination">
-      <button className="button button-outline" disabled={currentpage === 1} onClick={() => setCurrentpage(1)}><IconArrowBadgeLeft size={17} /></button>
+      <button className="button button-outline" disabled={currentpage === 1} onClick={() => setCurrentpage(1)}><IconChevronLeftPipe size={17} /></button>
       <button className="button button-outline" disabled={currentpage === 1} onClick={() => setCurrentpage(p => p - 1)}>
         Previous
       </button>
@@ -93,7 +93,7 @@ export default function PostList({
       <button className="button button-outline" disabled={currentpage === totalpages} onClick={() => setCurrentpage(p => p + 1)}>
         Next page
       </button>
-      <button className="button button-outline" disabled={currentpage === totalpages} onClick={() => setCurrentpage(totalpages)}><IconArrowBadgeRight size={17} /></button>
+      <button className="button button-outline" disabled={currentpage === totalpages} onClick={() => setCurrentpage(totalpages)}><IconChevronRightPipe size={17} /></button>
 
   </div>
   )}
