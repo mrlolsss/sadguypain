@@ -123,8 +123,8 @@ export default function PostDetail({
         <p>Storage: {post.storage_drive || "None"}</p>
         <p>Power Supply: {post.power_supply || "None"}</p>
         <p>Case: {post.pc_case || "None"}</p>
-        <span className="warning">{sockets[post.cpu] && sockets[post.motherboard] && (sockets[post.cpu] !== sockets[post.motherboard] ? "Warning: !!!incompatible CPU and motherboard (wrong socket)" : "")}</span>
-        <span className="warning">{ramtype[post.motherboard] && ramtype[post.ram] && (ramtype[post.motherboard] !== ramtype[post.ram] ? "Warning: !!!incompatible RAM and motherboard — match DDR4 or DDR5" : "")}</span>
+        <p className="warning">{sockets[post.cpu] && sockets[post.motherboard] && (sockets[post.cpu] !== sockets[post.motherboard] ? "Warning: !!!incompatible CPU and motherboard (wrong socket)" : "")}</p>
+        <p className="warning">{ramtype[post.motherboard] && ramtype[post.ram] && (ramtype[post.motherboard] !== ramtype[post.ram] ? "Warning: !!!incompatible RAM and motherboard — match DDR4 or DDR5" : "")}</p>
         <h2>Total wattage: {totalwattage}W</h2>
       </div>
       <div className="detail-footer">
