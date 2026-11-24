@@ -69,6 +69,21 @@ export default function Editors({
     "MSI PRO B650M-P": "AM5",
     "MSI B550M PRO-VDH WIFI": "AM4",
   }
+  const ramtype = {
+    // mobo type
+    "Soyo SY-Kuanglong B460M": "DDR4",
+    "ASUS Prime A520M-K": "DDR4",
+    "MSI PRO B650M-P": "DDR5",
+    "ASUS PRIME H610M-E D4": "DDR4",
+    "MSI B550M PRO-VDH WIFI": "DDR4",
+    // ram
+    "1x 8gb GeIL DDR4 2666MHz": "DDR4",
+    "2x 8gb (16gb) GeIL DDR4 2666MHz": "DDR4",
+    "1x 8gb Kingston FURY Beast DDR5 5600MHz": "DDR5",
+    "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": "DDR5",
+    "1x 16gb Corsair Vengeance DDR5 5600MHz": "DDR5",
+    "2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz": "DDR5"
+  }
   const [image, setImage] = React.useState(null);
   const [removeImage, setRemoveimage] = React.useState(false);
   const [busy, setBusy] = React.useState(false);
@@ -160,6 +175,10 @@ export default function Editors({
                  <option value="">select ram</option>
                  <option value="1x 8gb GeIL DDR4 2666MHz">1x 8GB GeIL DDR4 2666MHz 3W</option>
                  <option value="2x 8gb (16gb) GeIL DDR4 2666MHz">2x 8GB (16GB) GeIL DDR4 2666MHz 6W</option>
+                 <option value="1x 8gb Kingston FURY Beast DDR5 5600MHz">1x 8GB Kingston FURY Beast DDR5 5600MHz 3W</option>
+                 <option value="2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz">2x 8GB (16GB) Kingston FURY Beast DDR5 5600MHz 6W</option>
+                 <option value="1x 16gb Corsair Vengeance DDR5 5600MHz">1x 16gb Corsair Vengeance DDR5 5600MHz 4W</option>
+                 <option value="2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz">2x 16gb (32GB) Corsair Vengeance DDR5 5600MHz 8W</option>
               </select>
               <label>Storage drive:</label>
               <select value={storage} onChange={(e) => setStorage(e.target.value)}>
@@ -176,7 +195,8 @@ export default function Editors({
                 <option value="Corsair 4000D Airflow">Corsair 4000D Airflow (ATX)</option>
                 <option value="Lian Li Lancool 207">Lian Li Lancool 207 (ATX)</option>
               </select>
-              <p className="warning">{sockets[cpu] && sockets[mobo] && (sockets[cpu] !== sockets[mobo] ? "Warning: !!!wrong socket incompatible CPU and motherboard" : "")}</p>
+              <p className="warning">{sockets[cpu] && sockets[mobo] && (sockets[cpu] !== sockets[mobo] ? "Warning: !!!incompatible CPU and motherboard (wrong socket)" : "")}</p>
+              <p className="warning">{ramtype[mobo] && ramtype[ram] && (ramtype[mobo] !== ramtype[ram] ? "Warning: !!!incompatible RAM and motherboard — match DDR4 or DDR5" : "")}</p>
               <h3>Total Wattage: {totalwattage}W</h3>
               <p className="totalwatt">{watts[psu] === 0 ? "select power supply.." : totalwattage <= watts[psu] ? "Power Supply: good to go" : "Power Supply: too weak! select Power Supply with more wattage"}</p>
               <label>Power supply</label>
