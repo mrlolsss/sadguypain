@@ -48,6 +48,10 @@ export default function Editors({
     // ram
     "1x 8gb GeIL DDR4 2666MHz": 3,
     "2x 8gb (16gb) GeIL DDR4 2666MHz": 6,
+    "1x 8gb Kingston FURY Beast DDR5 5600MHz": 3,
+    "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": 6,
+    "1x 16gb Corsair Vengeance DDR5 5600MHz": 4,
+    "2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz": 8,
     // power supply
     "FSP HV PRO 550W": 550,
     "Segotep BN350 350W": 350,

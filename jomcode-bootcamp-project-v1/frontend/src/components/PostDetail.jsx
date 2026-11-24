@@ -40,6 +40,10 @@ export default function PostDetail({
     // ram
     "1x 8gb GeIL DDR4 2666MHz": 3,
     "2x 8gb (16gb) GeIL DDR4 2666MHz": 6,
+    "1x 8gb Kingston FURY Beast DDR5 5600MHz": 3,
+    "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": 6,
+    "1x 16gb Corsair Vengeance DDR5 5600MHz": 4,
+    "2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz": 8,
     // power supply
     "FSP HV PRO 550W": 550,
     "Segotep BN350 350W": 350,
@@ -60,6 +64,21 @@ export default function PostDetail({
     "ASUS Prime A520M-K": "AM4",
     "MSI PRO B650M-P": "AM5",
     "MSI B550M PRO-VDH WIFI": "AM4",
+  }
+  const ramtype = {
+    // mobo type
+    "Soyo SY-Kuanglong B460M": "DDR4",
+    "ASUS Prime A520M-K": "DDR4",
+    "MSI PRO B650M-P": "DDR5",
+    "ASUS PRIME H610M-E D4": "DDR4",
+    "MSI B550M PRO-VDH WIFI": "DDR4",
+    // ram
+    "1x 8gb GeIL DDR4 2666MHz": "DDR4",
+    "2x 8gb (16gb) GeIL DDR4 2666MHz": "DDR4",
+    "1x 8gb Kingston FURY Beast DDR5 5600MHz": "DDR5",
+    "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": "DDR5",
+    "1x 16gb Corsair Vengeance DDR5 5600MHz": "DDR5",
+    "2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz": "DDR5"
   }
   const itemdetail = {
     // processor
@@ -104,7 +123,8 @@ export default function PostDetail({
         <p>Storage: {post.storage_drive || "None"}</p>
         <p>Power Supply: {post.power_supply || "None"}</p>
         <p>Case: {post.pc_case || "None"}</p>
-        <span className="warning">{sockets[post.cpu] && sockets[post.motherboard] && (sockets[post.cpu] !== sockets[post.motherboard] ? "Warning: !!!wrong socket incompatible CPU and motherboard" : "")}</span>
+        <span className="warning">{sockets[post.cpu] && sockets[post.motherboard] && (sockets[post.cpu] !== sockets[post.motherboard] ? "Warning: !!!incompatible CPU and motherboard (wrong socket)" : "")}</span>
+        <span className="warning">{ramtype[post.motherboard] && ramtype[post.ram] && (ramtype[post.motherboard] !== ramtype[post.ram] ? "Warning: !!!incompatible RAM and motherboard — match DDR4 or DDR5" : "")}</span>
         <h2>Total wattage: {totalwattage}W</h2>
       </div>
       <div className="detail-footer">
