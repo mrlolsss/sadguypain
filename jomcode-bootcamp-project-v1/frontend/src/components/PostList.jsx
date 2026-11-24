@@ -23,7 +23,44 @@ export default function PostList({
   const startindex = (currentpage - 1) * postsperpage;
   const currentposts = posts.slice(startindex, startindex + postsperpage);
 
+  const watts = {
+    "": 0,
+    // processor
+    "Intel® Core™ i3-10105F Processor": 65,
+    "AMD Ryzen™ 5 5500F": 65,
+    "AMD Ryzen™ 5 7600": 65,
+    "Intel® Core™ i5-12400F Processor": 65,
+    "AMD Ryzen™ 7 5800X3D": 105,
+    // graphic card
+    "SAPPHIRE NITRO+ AMD RX 590 8G G5 SE": 225,
+    "Sapphire PULSE RX 9050 8G": 100,
+    "SAPPHIRE PULSE AMD Radeon™ RX 6600 8GB": 132,
+    "ASUS Dual GeForce RTX™ 4060 OC Edition 8GB": 115,
+    "ASUS PRIME GeForce RTX™ 5070 OC Edition 12GB": 250,
+    // motherboard
+    "Soyo SY-Kuanglong B460M": 45,
+    "ASUS Prime A520M-K": 45,
+    "MSI PRO B650M-P": 45,
+    "ASUS PRIME H610M-E D4": 45,
+    "MSI B550M PRO-VDH WIFI": 45,
+    // cpu cooler
+    "ARCTIC Liquid Freezer III 240": 15,
+    "Thermalright Peerless Assassin 120 SE": 10,
+    // hard drive type
+    "Standard Hard Drive": 20,
+    "Solid State Drive": 5,
+    "NVME Drive": 12,
+    // ram
+    "1x 8gb GeIL DDR4 2666MHz": 3,
+    "2x 8gb (16gb) GeIL DDR4 2666MHz": 6,
+    // power supply
+    "FSP HV PRO 550W": 550,
+    "Segotep BN350 350W": 350,
+    "Corsair CX650 650W 80 PLUS Bronze": 650,
+    "Corsair RM750e 750W 80 PLUS Gold": 750,
+  }
 
+ 
   return <main className="wrap main-content">
     <div className="section-heading">
       <div>
@@ -56,7 +93,10 @@ export default function PostList({
       </p>
       <button className="button button-dark" onClick={onCreate}>Start building <IconArrowBadgeRight size={16} /></button>
     </div> : <div className="post-grid">
-      {currentposts.map((post, index) => <button className="post-card" key={post.id} onClick={() => onSelect(post)}>
+      {currentposts.map((post, index) => {
+        const totalwattage = (watts[post.cpu] || 0) + (watts[post.cpu_cooler] || 0) + (watts[post.graphic_card] || 0) + (watts[post.motherboard] || 0) + (watts[post.ram] || 0) + (watts[post.storage_drive] || 0);
+       return (      
+      <button className="post-card" key={post.id} onClick={() => onSelect(post)}>
         <div className={`card-cover cover-${index % 4}`}>
           {post.image_url ? <img src={post.image_url} alt="" /> : <div className="cover-decoration">
             {/* <span>✦</span>
@@ -73,14 +113,20 @@ export default function PostList({
             })}
           </div>
           <h3>
-            {post.build_name}
+            {post.build_name}  
           </h3>
+          <div className="listdetail">
+          <p>{post.cpu}</p>
+          <p>{post.graphic_card}</p>
+          </div>
+          <div className="watt">{totalwattage} W</div>
           <div className="card-bottom">
             <span>See build</span>
             <IconArrowBadgeRight size={17} />
           </div>
         </div>
       </button>)}
+      )}
     </div>
     }
     {totalpages > 1 && (
