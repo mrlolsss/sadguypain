@@ -45,6 +45,9 @@ export default function Editors({
     "Standard Hard Drive": 20,
     "Solid State Drive": 5,
     "NVME Drive": 12,
+    "Solid State Drive + Standard Hard Drive": 25, 
+    "NVME Drive + Standard Hard Drive": 32,
+    "NVME Drive + Solid State Drive": 17,
     // ram
     "1x 8gb GeIL DDR4 2666MHz": 3,
     "2x 8gb (16gb) GeIL DDR4 2666MHz": 6,
@@ -187,15 +190,12 @@ export default function Editors({
               <label>Storage drive:</label>
               <select value={storage} onChange={(e) => setStorage(e.target.value)}>
                  <option value="">select storage</option>
-                 <option value="Standard Hard Drive">Standard Hard Drive 2.5/3.5 inch 20W</option>
-                 <option value="Solid State Drive">Solid State Drive 5W</option>
+                 <option value="Standard Hard Drive">Standard Hard Drive 2.5/3.5 inch (SSD) 20W</option>
+                 <option value="Solid State Drive">Solid State Drive (HDD) 5W</option>
                  <option value="NVME Drive">NVME drive 12W</option>
-              </select>
-              <select value={storage} onChange={(e) => setStorage(e.target.value)}>
-                 <option value="">select storage</option>
-                 <option value="Standard Hard Drive">Standard Hard Drive 2.5/3.5 inch 20W</option>
-                 <option value="Solid State Drive">Solid State Drive 5W</option>
-                 <option value="NVME Drive">NVME drive 12W</option>
+                 <option value="Solid State Drive + Standard Hard Drive">SSD + HDD 25W</option>
+                 <option value="NVME Drive + Standard Hard Drive">NVME + HDD 32W</option>
+                 <option value="NVME Drive + Solid State Drive">NVME + SSD 17W</option>
               </select>
               <label>Casing:</label>
               <select value={casing} onChange={(e) => setCasing(e.target.value)}>
