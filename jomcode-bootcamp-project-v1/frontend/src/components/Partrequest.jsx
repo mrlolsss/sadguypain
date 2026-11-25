@@ -42,7 +42,7 @@ export default function Partrequest({
                 <button type="submit" disable={busy}>Send</button>
               </form>
               {error && <div className="notice error">{error}</div>}
-              {sent && <div className="notice success">Request Sent! we'll try added item ASAP thank you</div>}
+              {sent && <div className="notice success">Request Sent! we'll try add the item ASAP thank you</div>}
             </div>
             </div>    
 }
