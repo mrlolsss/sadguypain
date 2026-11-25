@@ -44,10 +44,14 @@ export default function PostDetail({
     // ram
     "1x 8gb GeIL DDR4 2666MHz": 3,
     "2x 8gb (16gb) GeIL DDR4 2666MHz": 6,
+    "1x 8gb Kingston FURY Beast DDR4 3200MHz": 3,
+    "2x 8gb (16gb) Kingston FURY Beast DDR4 3200MHz": 6,
+    "2x 8gb (16gb) Corsair Vengeance LPX DDR4 3600MHz": 6,
+    "2x 16gb (32gb) Corsair Vengeance LPX DDR4 3600MHz": 8,
     "1x 8gb Kingston FURY Beast DDR5 5600MHz": 3,
     "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": 6,
     "1x 16gb Corsair Vengeance DDR5 5600MHz": 4,
-    "2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz": 8,
+    "2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz": 8,
     // power supply
     "FSP HV PRO 550W": 550,
     "Segotep BN350 350W": 350,
@@ -79,10 +83,14 @@ export default function PostDetail({
     // ram
     "1x 8gb GeIL DDR4 2666MHz": "DDR4",
     "2x 8gb (16gb) GeIL DDR4 2666MHz": "DDR4",
+    "1x 8gb Kingston FURY Beast DDR4 3200MHz": "DDR4",
+    "2x 8gb (16gb) Kingston FURY Beast DDR4 3200MHz": "DDR4",
+    "2x 8gb (16gb) Corsair Vengeance LPX DDR4 3600MHz": "DDR4",
+    "2x 16gb (32gb) Corsair Vengeance LPX DDR4 3600MHz": "DDR4",
     "1x 8gb Kingston FURY Beast DDR5 5600MHz": "DDR5",
     "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": "DDR5",
     "1x 16gb Corsair Vengeance DDR5 5600MHz": "DDR5",
-    "2x 16gb (32gb) Corsair Vengeance DDR5 5600MHz": "DDR5"
+    "2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz": "DDR5",
   }
   const itemdetail = {
     // processor
