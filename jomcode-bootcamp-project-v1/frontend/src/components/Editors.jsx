@@ -58,7 +58,7 @@ export default function Editors({
     "2x 16gb (32gb) Corsair Vengeance LPX DDR4 3600MHz": 8,
     "1x 8gb Kingston FURY Beast DDR5 5600MHz": 3,
     "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": 6,
-    "1x 16gb Corsair Vengeance DDR5 5600MHz": 4,
+    "1x 16gb Corsair Vengeance DDR5 6000MHz": 4,
     "2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz": 8,
     // power supply
     "FSP HV PRO 550W": 550,
@@ -97,7 +97,7 @@ export default function Editors({
     "2x 16gb (32gb) Corsair Vengeance LPX DDR4 3600MHz": "DDR4",
     "1x 8gb Kingston FURY Beast DDR5 5600MHz": "DDR5",
     "2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz": "DDR5",
-    "1x 16gb Corsair Vengeance DDR5 5600MHz": "DDR5",
+    "1x 16gb Corsair Vengeance DDR5 6000MHz": "DDR5",
     "2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz": "DDR5",
   }
   const [image, setImage] = React.useState(null);
@@ -188,16 +188,16 @@ export default function Editors({
               </select>
               <label>RAM:</label>
               <select value={ram} onChange={(e) => setRam(e.target.value)}> 
-                 <option value="1x 8gb GeIL DDR4 2666MHz">1x 8GB GeIL DDR4 2666MHz (3W)</option>
-                 <option value="2x 8gb (16gb) GeIL DDR4 2666MHz">2x 8GB (16GB) GeIL DDR4 2666MHz (6W)</option>
-                 <option value="1x 8gb Kingston FURY Beast DDR4 3200MHz">1x 8GB Kingston FURY Beast DDR4 3200MHz (3W)</option>
-                 <option value="2x 8gb (16gb) Kingston FURY Beast DDR4 3200MHz">2x 8GB (16GB) Kingston FURY Beast DDR4 3200MHz (6W)</option>
-                 <option value="2x 8gb (16gb) Corsair Vengeance LPX DDR4 3600MHz">2x 8GB (16GB) Corsair Vengeance LPX DDR4 3600MHz (6W)</option>
-                 <option value="2x 16gb (32gb) Corsair Vengeance LPX DDR4 3600MHz">2x 16GB (32GB) Corsair Vengeance LPX DDR4 3600MHz (8W)</option>
-                 <option value="1x 8gb Kingston FURY Beast DDR5 5600MHz">1x 8GB Kingston FURY Beast DDR5 5600MHz (3W)</option>
-                 <option value="2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz">2x 8GB (16GB) Kingston FURY Beast DDR5 5600MHz (6W)</option>
-                 <option value="1x 16gb Corsair Vengeance DDR5 5600MHz">1x 16GB Corsair Vengeance DDR5 5600MHz (4W)</option>
-                 <option value="2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz">2x 16GB (32GB) Corsair Vengeance DDR5 6000MHz (8W)</option>
+                 <option value="1x 8gb GeIL DDR4 2666MHz">1x 8GB GeIL DDR4 2666MHz 3W</option>
+                 <option value="2x 8gb (16gb) GeIL DDR4 2666MHz">2x 8GB (16GB) GeIL DDR4 2666MHz 6W</option>
+                 <option value="1x 8gb Kingston FURY Beast DDR4 3200MHz">1x 8GB Kingston FURY Beast DDR4 3200MHz 3W</option>
+                 <option value="2x 8gb (16gb) Kingston FURY Beast DDR4 3200MHz">2x 8GB (16GB) Kingston FURY Beast DDR4 3200MHz 6W</option>
+                 <option value="2x 8gb (16gb) Corsair Vengeance LPX DDR4 3600MHz">2x 8GB (16GB) Corsair Vengeance LPX DDR4 3600MHz 6W</option>
+                 <option value="2x 16gb (32gb) Corsair Vengeance LPX DDR4 3600MHz">2x 16GB (32GB) Corsair Vengeance LPX DDR4 3600MHz 8W</option>
+                 <option value="1x 8gb Kingston FURY Beast DDR5 5600MHz">1x 8GB Kingston FURY Beast DDR5 5600MHz 3W</option>
+                 <option value="2x 8gb (16gb) Kingston FURY Beast DDR5 5600MHz">2x 8GB (16GB) Kingston FURY Beast DDR5 5600MHz 6W</option>
+                 <option value="1x 16gb Corsair Vengeance DDR5 6000MHz">1x 16GB Corsair Vengeance DDR5 6000MHz 4W</option>
+                 <option value="2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz">2x 16GB (32GB) Corsair Vengeance DDR5 6000MHz 8W</option>
               </select>
               <label>Storage drive:</label>
               <select value={storage} onChange={(e) => setStorage(e.target.value)}>
