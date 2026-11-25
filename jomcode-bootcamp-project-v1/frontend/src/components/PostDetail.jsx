@@ -40,6 +40,7 @@ export default function PostDetail({
     "Solid State Drive + Standard Hard Drive": 25, 
     "NVME Drive + Standard Hard Drive": 32,
     "NVME Drive + Solid State Drive": 17,
+    "NVME Drive + Solid State Drive + Standard Hard Drive": 37,
     // ram
     "1x 8gb GeIL DDR4 2666MHz": 3,
     "2x 8gb (16gb) GeIL DDR4 2666MHz": 6,
