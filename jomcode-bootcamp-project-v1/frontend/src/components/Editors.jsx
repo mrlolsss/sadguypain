@@ -191,6 +191,12 @@ export default function Editors({
                  <option value="Solid State Drive">Solid State Drive 5W</option>
                  <option value="NVME Drive">NVME drive 12W</option>
               </select>
+              <select value={storage} onChange={(e) => setStorage(e.target.value)}>
+                 <option value="">select storage</option>
+                 <option value="Standard Hard Drive">Standard Hard Drive 2.5/3.5 inch 20W</option>
+                 <option value="Solid State Drive">Solid State Drive 5W</option>
+                 <option value="NVME Drive">NVME drive 12W</option>
+              </select>
               <label>Casing:</label>
               <select value={casing} onChange={(e) => setCasing(e.target.value)}>
                 <option value="">select case</option>
