@@ -187,7 +187,8 @@ export default function Editors({
                  <option value="MSI B550M PRO-VDH WIFI">MSI B550M PRO-VDH WIFI AM4 45W</option>
               </select>
               <label>RAM:</label>
-              <select value={ram} onChange={(e) => setRam(e.target.value)}> 
+              <select value={ram} onChange={(e) => setRam(e.target.value)}>
+                 <option value="">select ram</option> 
                  <option value="1x 8gb GeIL DDR4 2666MHz">1x 8GB GeIL DDR4 2666MHz 3W</option>
                  <option value="2x 8gb (16gb) GeIL DDR4 2666MHz">2x 8GB (16GB) GeIL DDR4 2666MHz 6W</option>
                  <option value="1x 8gb Kingston FURY Beast DDR4 3200MHz">1x 8GB Kingston FURY Beast DDR4 3200MHz 3W</option>
