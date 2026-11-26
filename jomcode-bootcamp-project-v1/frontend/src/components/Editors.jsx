@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Check, ImagePlus, LoaderCircle, X } from 'lucide-react';
-import { IconCheck, IconBrandTabnine, IconPhotoUp, IconXMark } from '@tabler/icons-react';
+import { IconCheck, IconBrandTabnine, IconPhotoUp, IconXMark, IconArrowBadgeLeft } from '@tabler/icons-react';
 
 import { api } from '../lib/api';
 export default function Editors({
@@ -100,6 +100,26 @@ export default function Editors({
     "1x 16gb Corsair Vengeance DDR5 6000MHz": "DDR5",
     "2x 16gb (32gb) Corsair Vengeance DDR5 6000MHz": "DDR5",
   }
+  const itemdetail = {
+    // processor
+    "AMD Ryzen™ 7 5800X3D": "https://www.amd.com/en/products/processors/desktops/ryzen/5000-series/amd-ryzen-7-5800x3d.html",
+    "AMD Ryzen™ 5 5500F": "https://www.amd.com/en/products/processors/desktops/ryzen/5000-series/amd-ryzen-5-5500f.html",
+    "AMD Ryzen™ 5 7600": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+    "Intel® Core™ i3-10105F Processor": "https://www.intel.com/content/www/us/en/products/sku/203474/intel-core-i310105f-processor-6m-cache-up-to-4-40-ghz/specifications.html",
+    "Intel® Core™ i5-12400F Processor": "https://www.intel.com/content/www/us/en/products/sku/134587/intel-core-i512400f-processor-18m-cache-up-to-4-40-ghz/specifications.html",
+    // gpu
+    "ASUS PRIME GeForce RTX™ 5070 OC Edition 12GB": "https://www.techpowerup.com/gpu-specs/geforce-rtx-5070.c4218",
+    "SAPPHIRE NITRO+ AMD RX 590 8G G5 SE": "https://www.techpowerup.com/gpu-specs/radeon-rx-590.c3322",
+    "Sapphire PULSE RX 9050 8G": "https://www.techpowerup.com/gpu-specs/radeon-rx-9050.c4424",
+    "SAPPHIRE PULSE AMD Radeon™ RX 6600 8GB": "https://www.techpowerup.com/gpu-specs/radeon-rx-6600.c3696",
+    "ASUS Dual GeForce RTX™ 4060 OC Edition 8GB": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4060.c4107",
+    // mobo
+    "Soyo SY-Kuanglong B460M": "https://www.soyocn.net/2020/0508/2779.html",
+    "ASUS Prime A520M-K": "https://www.asus.com/my/motherboards-components/motherboards/prime/prime-a520m-k/",
+    "MSI PRO B650M-P": "https://www.msi.com/Motherboard/PRO-B650M-P",
+    "ASUS PRIME H610M-E D4": "https://www.asus.com/my/motherboards-components/motherboards/prime/prime-h610m-e-d4/",
+    "MSI B550M PRO-VDH WIFI": "https://www.msi.com/Motherboard/B550M-PRO-VDH-WIFI",
+  }
   const [image, setImage] = React.useState(null);
   const [removeImage, setRemoveimage] = React.useState(false);
   const [busy, setBusy] = React.useState(false);
@@ -186,6 +206,7 @@ export default function Editors({
                  <option value="ASUS PRIME H610M-E D4">ASUS PRIME H610M-E LGA 1700 D4 45W</option>
                  <option value="MSI B550M PRO-VDH WIFI">MSI B550M PRO-VDH WIFI AM4 45W</option>
               </select>
+              {itemdetail[mobo] && (<a className="detail-link" href={itemdetail[mobo]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>)}
               <label>RAM:</label>
               <select value={ram} onChange={(e) => setRam(e.target.value)}>
                  <option value="">select ram</option> 
