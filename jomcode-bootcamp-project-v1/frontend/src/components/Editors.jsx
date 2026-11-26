@@ -182,6 +182,7 @@ export default function Editors({
                 <option value="Intel® Core™ i5-12400F Processor">Intel® Core™ i5-12400F Processor 65W LGA 1700</option>
                 <option value="AMD Ryzen™ 7 5800X3D">AMD Ryzen™ 7 5800X3D AM4 105W</option>
               </select>
+              {itemdetail[cpu] && <a className="detail-link" href={itemdetail[cpu]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>}
               <label>CPU cooler:</label>
               <select value={cpucooler} onChange={(e) => setCpucooler(e.target.value)}>
                  <option value="">select cooler</option>
@@ -197,6 +198,7 @@ export default function Editors({
                  <option value="ASUS Dual GeForce RTX™ 4060 OC Edition 8GB">ASUS Dual GeForce RTX™ 4060 OC Edition 8GB 115W</option>
                  <option value="ASUS PRIME GeForce RTX™ 5070 OC Edition 12GB">ASUS PRIME GeForce RTX™ 5070 OC Edition 12GB 250W</option>
               </select>
+              {itemdetail[gpu] && <a className="detail-link" href={itemdetail[gpu]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>}
               <label>Motherboard:</label>
               <select value={mobo} onChange={(e) => setMobo(e.target.value)}>
                  <option value="">select motherboard</option>
@@ -206,7 +208,7 @@ export default function Editors({
                  <option value="ASUS PRIME H610M-E D4">ASUS PRIME H610M-E LGA 1700 D4 45W</option>
                  <option value="MSI B550M PRO-VDH WIFI">MSI B550M PRO-VDH WIFI AM4 45W</option>
               </select>
-              {itemdetail[mobo] && (<a className="detail-link" href={itemdetail[mobo]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>)}
+              {itemdetail[mobo] && <a className="detail-link" href={itemdetail[mobo]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>}
               <label>RAM:</label>
               <select value={ram} onChange={(e) => setRam(e.target.value)}>
                  <option value="">select ram</option> 

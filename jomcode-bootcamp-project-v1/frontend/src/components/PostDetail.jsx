@@ -127,10 +127,10 @@ export default function PostDetail({
         })}</div>
       {post.image_url && <img className="detail-image" src={post.image_url} alt="" />}
       <div className="detail-body">
-        <p>CPU: {post.cpu || "None"} {itemdetail[post.cpu] && (<a className="detail-link" href={itemdetail[post.cpu]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>)}</p>
+        <p>CPU: {post.cpu || "None"} {itemdetail[post.cpu] && <a className="detail-link" href={itemdetail[post.cpu]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>}</p>
         <p>CPU cooler: {post.cpu_cooler || "Stock cooler"}</p> 
-        <p>GPU: {post.graphic_card || "None"} {itemdetail[post.graphic_card] && (<a className="detail-link" href={itemdetail[post.graphic_card]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>)}</p>
-        <p>Motherboard: {post.motherboard || "None"} {itemdetail[post.motherboard] && (<a className="detail-link" href={itemdetail[post.motherboard]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>)}</p>
+        <p>GPU: {post.graphic_card || "None"} {itemdetail[post.graphic_card] && <a className="detail-link" href={itemdetail[post.graphic_card]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>}</p>
+        <p>Motherboard: {post.motherboard || "None"} {itemdetail[post.motherboard] && <a className="detail-link" href={itemdetail[post.motherboard]} target="_blank" rel="noreferrer">detail<IconArrowBadgeLeft size={12} /></a>}</p>
         <p>RAM: {post.ram || "None"}</p>
         <p>Storage: {post.storage_drive || "None"}</p>
         <p>Power Supply: {post.power_supply || "None"}</p>
